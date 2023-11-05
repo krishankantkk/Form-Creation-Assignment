@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form creation assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    <script
+      src="https://kit.fontawesome.com/e77eed3d0c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <form action="" id="form" method="post">
+          <h3 class="from-heading">Form</h3>
+          <div class="element">
+            <label for=""> Name</label>
+            <input type="text"  id="name" style="font-family: 'Roboto', sans-serif"/>
+          </div>
+          <div class="element" id="College">
+            <label for=""> College</label>
+          
+            <div class="dropdown-btn-college dropdown-btn">
+              <span class="college_name" id="college_name"></span>
+              <span class="icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input id="search-college" type="text" placeholder="search">
+            </div>
+            <ul class="option">
+            </ul>
+         
+        </div>
+          <div class="element">
+            <label for=""> Branch</label>
+            <div class="dropdown-btn-branch dropdown-btn">
+              <span class="Branch-Name" id="Branch-Name"></span>
+              <span class="icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+          <div class="BranchContent content">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input id="search-Branch"  class="input" type="text" placeholder="search">
+            </div>
+            <ul class="BranchOption option">
+            </ul>
+        </div>
+         
+          <div class="element">
+            <label for=""> Addmission Type</label>
+            <div class="dropdown-btn dropdown-btn-addmision">
+              <span class="AddmissionName" id="AddmissionName"></span>
+              <span class="icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+          <div class="AddmissionContent content">
+            <div class="search">
+            </div>
+            <ul class="AddmissionOption option">
+              <li>fulltime</li>
+              <li>part-time</li>
+              <li>Regular Admission</li>
+              <li>Transfer Admission</li>
+              <li>Special Admission</li>
+              <li>Distance Addmission</li>
+            </ul>
+        </div>
+          <div class="element">
+            <div>
+              <label for="Requirement">Requirement</label>
+            </div>
+
+            <div class="requirement">
+              <span><input type="radio" name="Requirement" /> <label for="">High</label></span>
+              <span><input type="radio" name="Requirement" /> <label for="">Medium</label></span>
+              <span><input type="radio" name="Requirement" /> <label for="">High</label></span>
+            </div>
+          </div>
+
+          <div class="element">
+            <label for=""> Start Time</label>
+            <input type="time" placeholder="Name" id="name" />
+          </div>
+
+          <div class="element">
+            <label for=""> End Time</label>
+            <input type="time" placeholder="Name" id="name" />
+          </div>
+
+          <div class="element">
+            <label for="recepient"> Sent To</label>
+            <div class="dropdown-btn dropdwon-btn-sentTo">
+              <span> Select</span>
+                <span class="icon">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </span>
+              </div>
+
+          </div>
+          <div class="sent-to-content content">
+            <ul class="sent-to-list option">
+              <li class="sentListItem">
+                <span class="listCheckbox">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Emailid1</span>
+              </li>
+              <li class="sentListItem">
+                <span class="listCheckbox">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Emailid2</span>
+              </li>
+              <li class="sentListItem">
+                <span class="listCheckbox">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Emailid3</span>
+              </li>
+              <li class="sentListItem">
+                <span class="listCheckbox">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Emailid4</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="element">
+            <div>
+                <label for="">Send Via</label>
+            </div>
+            <div class="send-box">
+              <input type="checkbox" id="myCheckbox" value="Call" name="sent"  /> Call
+                <input type="checkbox"  value="SMS" name="sent" /> Sms
+                <input type="checkbox"  value="Whatsapp" name="sent" /> Whatsapp
+                <input type="checkbox"  value="Email" name="sent" /> Email
+            </div>
+            
+          </div>
+          
+          <div class="element desc">
+            <div>Description</div>
+            <div>
+                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+            </div>
+            
+          </div>
+          <div class="btn-container">
+            
+            <button class="btn" id="addButton"> ADD</button>
+            <button class="btn" id="cancelButton">Cancel</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <!-- <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script> -->
+   
+  </body>
+</html>

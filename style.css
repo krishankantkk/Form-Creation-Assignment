@@ -1,0 +1,269 @@
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@100;400;700&display=swap');
+
+/* General styling for the page */
+body {
+    background: rgb(28, 39, 53);
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    color: #B3B7BC;
+}
+
+/* Styling for the container */
+.container {
+    background: rgb(28, 39, 53);
+    height: 100vh;
+    width: 50%;
+    position: top; /* This should be 'top' or 'relative' if it's a valid value */
+}
+
+/* Styling for the form container */
+.form-container {
+    border: 1px solid rgb(249, 242, 242);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Styling for the form heading */
+h3 {
+    background: #3CD2A5;
+    padding-left: 12px;
+    color: rgb(255, 255, 255);
+}
+
+/* Styling for the form */
+form {
+    background: rgb(28, 39, 53);
+}
+
+/* Styling for form elements */
+.element {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Styling for the name input field */
+#name{
+    width: 60%;
+    background: rgb(28, 39, 53);
+    color: #d1d4d7;
+    padding: 4px;
+    font-weight: 300;
+    outline: none;
+    font-family: 'Roboto', sans-serif !important;
+    border-radius: 4px;
+}
+
+/* Styling for the dropdown button */
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(28, 39, 53);
+    width: 60%;
+    border: .8px solid #B3B7BC;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #B3B7BC;
+    padding: 4px;
+}
+
+/* Styling for the icon inside the dropdown button */
+.dropdown-btn .icon i {
+    position: relative;
+    display: flex;
+}
+
+/* Styling for the submit button */
+button {
+    background-color: rgb(28, 39, 53);
+    border-radius: 5px;
+    color: #32e3ae;
+    outline: #32e3ae;
+    border: 1px solid #32e3ae;
+    cursor: pointer;
+    position: relative;
+}
+
+button:hover {
+    color: white;
+    background-color: rgb(28, 39, 53);
+    font-weight: 600;
+}
+
+/* Styling for the submit button container */
+.btn {
+    position: relative;
+    left: 76%;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+/* Styling for the textarea */
+textarea {
+    background: rgb(28, 39, 53);
+    color: #d0d4d8;
+    border-radius: 4px;
+    width: 60%;
+}
+
+/* Styling for the requirement section */
+.requirement span input{
+background-color: #32e3ae;
+}
+/* Styling for the checkbox (you may need to add more specific selectors) */
+#checkbox {
+    background-color: rgb(32, 55, 55);
+}
+
+/* Styling for the content section */
+.content {
+    padding: 20px;
+    margin-left: 38%;
+    margin-top: 10px;
+    width: 45%;
+    color: black;
+    background-color: #d0d4d8;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Styling for the search input inside the content section */
+.content .search input {
+    width: 60%;
+    height: 30px;
+    padding-left: 26px;
+    outline: none;
+    border: 1px solid #1e1e1e;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Show content when the element is active */
+.element.active .content {
+    display: block;
+}
+
+/* Styling for active elements (you may need to apply this class) */
+.active {
+    display: block;
+}
+
+/* Styling for search icon */
+.search i {
+    left: 10px;
+    line-height: 35px;
+    position: absolute;
+}
+
+/* Styling for dropdown options */
+.option {
+    margin-top: 10px;
+    overflow-y: auto;
+    margin-top: 15px;
+    max-height: 100px;
+}
+
+/* Styling for individual option items list */
+.option li {
+    list-style: none;
+    height: 35px;
+    padding: 0 13px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Hover effect for option items */
+.option li:hover {
+    background-color: #2f3439;
+    color: white;
+}
+
+/* Styling for branch-specific option items (if needed) */
+.BranchOption li {
+    list-style: none;
+    height: 35px;
+    padding: 0 13px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Hover effect for branch-specific option items (if needed) */
+.BranchOption li:hover {
+    background-color: #2f3439;
+    color: white;
+}
+
+/* Styling for multiple selecter option in sent to branch */
+.sent-to-list li{
+list-style: none;
+}
+.sent-to-list li .listCheckbox{
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 8px;
+    border: 1.5px solid black;
+}
+
+.listCheckbox .fa-check{
+transform: scale(0);
+
+}
+.checked .fa-check{
+    transform: scale(1);
+    
+    }
+
+/* CSS styles for mobile phones */
+@media screen and (max-width: 767px) {
+
+    .container {
+        width: 88%;
+        padding-top: 20px;
+  }
+  .btn{
+    position: relative;
+    left: 66%;
+  }
+ 
+  .content{
+    padding: 10px;
+    margin-left: 20%;
+    margin-top: 5px;
+    width: 70%;
+    color: black;
+  }
+  .send-box{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    position: relative;
+    right: 20%;
+}
+.requirement{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 28%;
+    gap: 2px;
+    justify-content: left;
+   
+}
+}
+  
