@@ -13,15 +13,17 @@
   </head>
   <body>
     <div class="container">
+      <span class="top" id="top"></span>
       <div class="form-container">
         <form action="" id="form" method="post">
           <h3 class="from-heading">Form</h3>
           <div class="element">
-            <label for=""> Name</label>
-            <input type="text"  id="name" style="font-family: 'Roboto', sans-serif"/>
+            <label for=""> Name* </label><span class="requiredfield" id="requiredfield"></span>
+              <input type="text" id="username" class="name" style="font-family: 'Roboto', sans-serif" required/>
           </div>
+          
           <div class="element" id="College">
-            <label for=""> College</label>
+            <label for=""> College* </label><span class="requiredfield" id="requiredcollege"></span>
           
             <div class="dropdown-btn-college dropdown-btn">
               <span class="college_name" id="college_name"></span>
@@ -40,7 +42,7 @@
          
         </div>
           <div class="element">
-            <label for=""> Branch</label>
+            <label for=""> Branch*</label><span class="requiredfield" id="requiredbranch"></span>
             <div class="dropdown-btn-branch dropdown-btn">
               <span class="Branch-Name" id="Branch-Name"></span>
               <span class="icon">
@@ -58,7 +60,7 @@
         </div>
          
           <div class="element">
-            <label for=""> Addmission Type</label>
+            <label for=""> Addmission Type*</label><span class="requiredfield" id="requiredaddmission"></span>
             <div class="dropdown-btn dropdown-btn-addmision">
               <span class="AddmissionName" id="AddmissionName"></span>
               <span class="icon">
@@ -84,26 +86,25 @@
             </div>
 
             <div class="requirement">
-              <span><input type="radio" name="Requirement" /> <label for="">High</label></span>
-              <span><input type="radio" name="Requirement" /> <label for="">Medium</label></span>
-              <span><input type="radio" name="Requirement" /> <label for="">High</label></span>
+              <span><input type="radio" name="Requirement" value="high"/> <label for="">High</label></span>
+              <span><input type="radio" name="Requirement" value="Medium"/> <label for="">Medium</label></span>
+              <span><input type="radio" name="Requirement" value="Low"/> <label for="">Low</label></span>
             </div>
           </div>
 
           <div class="element">
             <label for=""> Start Time</label>
-            <input type="time" placeholder="Name" id="name" />
+            <input type="time" placeholder="Name"  class="name" />
           </div>
 
           <div class="element">
             <label for=""> End Time</label>
-            <input type="time" placeholder="Name" id="name" />
+            <input type="time" placeholder="Name"  class="name" id="endtime" />
           </div>
-
           <div class="element">
-            <label for="recepient"> Sent To</label>
+            <label for="recepient"> Sent To*</label><span class="requiredfield" id="requiredsentto"></span>
             <div class="dropdown-btn dropdwon-btn-sentTo">
-              <span> Select</span>
+              <span id="selectEmail"> Select</span>
                 <span class="icon">
                   <i class="fa-solid fa-chevron-down"></i>
                 </span>
@@ -141,7 +142,7 @@
           
           <div class="element">
             <div>
-                <label for="">Send Via</label>
+                <label for="">Send Via*</label> <span class="requiredfield" id="sendvia"></span>
             </div>
             <div class="send-box">
               <input type="checkbox" id="myCheckbox" value="Call" name="sent"  /> Call
@@ -171,8 +172,5 @@
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <!-- <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script> -->
-   
   </body>
 </html>
