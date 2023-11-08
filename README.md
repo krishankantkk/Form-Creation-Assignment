@@ -29,7 +29,7 @@ git clone https://github.com/krishankantkk/Form-Creation-Assignment.git
 
 ## Demo
 
-link to demo https://html-form-krishan-kant.netlify.app/
+link to demo [deplyed](https://form-creation-assignment.netlify.app/)
 
 
 ## Contributing
