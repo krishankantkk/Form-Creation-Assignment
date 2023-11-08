@@ -53,7 +53,8 @@ form {
 }
 
 /* Styling for the name input field */
-#name{
+
+.name{
     width: 60%;
     background: rgb(28, 39, 53);
     color: #d1d4d7;
@@ -63,6 +64,18 @@ form {
     font-family: 'Roboto', sans-serif !important;
     border-radius: 4px;
 }
+
+/* Styling for therequired feilder */
+.requiredfield{
+    color: red;
+    display: block;
+    transform: scale(1);
+}
+
+.notrequired{
+    transform: scale(0);
+}
+
 
 /* Styling for the dropdown button */
 .dropdown-btn {
@@ -267,3 +280,9 @@ transform: scale(0);
 }
 }
   
+.top{
+    font-size: large;
+    color: rgb(10, 243, 10);
+    padding: 0 auto;
+    margin-bottom: 20px;
+}
