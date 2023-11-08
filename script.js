@@ -1,5 +1,4 @@
 
-
   // Variables for college fields
 const dropdownbtn = document.querySelector(".dropdown-btn-college");
 const content = document.querySelector(".content");
@@ -134,7 +133,8 @@ const dropdownBtnSentto = document.querySelector(".dropdwon-btn-sentTo");
 const senttoContent = document.querySelector(".sent-to-content");
 const listCheckbox = document.querySelector(".listCheckbox");
 const sentListItem = document.querySelectorAll(".sentListItem");
-
+const selectEmail=document.querySelector("#selectEmail");
+const emailListArray=[];
 // Event listener for the "Sent To" dropdown button
 dropdownBtnSentto.addEventListener("click", () => {
   senttoContent.classList.toggle("active");
@@ -144,9 +144,17 @@ dropdownBtnSentto.addEventListener("click", () => {
 sentListItem.forEach(item => {
   item.addEventListener("click", () => {
     item.classList.toggle("checked");
+    if (item.classList.contains("checked")) {
+      emailListArray.push(item.textContent);
+    } else {
+      const index = emailListArray.indexOf(item.textContent);
+      if (index !== -1) {
+        emailListArray.splice(index, 1);
+      }
+    }
+    selectEmail.innerHTML = emailListArray.join(", ");
   });
 });
-
 // Event listener for the "Cancel" button to clear the form fields
 document.getElementById("cancelButton").addEventListener("click", function() {
   // Clear the form fields
@@ -154,15 +162,107 @@ document.getElementById("cancelButton").addEventListener("click", function() {
 });
 
 //code for to collect data from user when add button clicked form suubmit field
-const form=document.getElementById("form");
-form.addEventListener("submit", (event) => {
+const form=document.getElementById("addButton");
+form.addEventListener("click", (event) => {
   event.preventDefault();
-  let username=document.getElementById("name").value;
+  let username=document.getElementById("username").value;
   let collegename=document.getElementById("college_name").innerHTML;
   let branch=document.getElementById("Branch-Name").innerHTML;
   let addmision=document.getElementById("AddmissionName").innerHTML;
   const radioButtons = document.querySelectorAll('input[name="Requirement"]');
+  const requiredname=document.getElementById("requiredfield");
+//required field 
+  const requiredcollege=document.getElementById("requiredcollege");
+  const requiredbranch=document.getElementById("requiredbranch");
+  const requiredaddmission=document.getElementById("requiredaddmission");
+  const requiredRequirement=document.getElementById("requiredRequirement");
+  const startdate=document.getElementById("startime");
+  const enddate=document.getElementById("endtime");
+  const requiredsentto=document.getElementById("requiredsentto");
+  const sendvia=document.getElementById("sendvia");
+  const sent=document.querySelectorAll('input[name="sent"]');
+  if(username=="")
+  {
+    requiredname.innerText="required field";
+    requiredname.classList.add("requiredfield");
+    requiredname.classList.remove("notrequired");
+  }
+  else{
+    requiredname.classList.add("notrequired");
+    requiredname.classList.remove("requiredfield");
+    var user=true;
+  }
+  if(collegename=="")
+  {
+    requiredcollege.classList.add("requiredfield");
+    requiredcollege.classList.remove("notrequired");
+    requiredcollege.innerText="required field";
+  }
+  else{
+    requiredcollege.classList.add("notrequired");
+    requiredcollege.classList.remove("requiredfield");
+    var college=true;
+  }
+  if(branch=="")
+  {
+    requiredbranch.classList.add("requiredfield");
+    requiredbranch.classList.remove("notrequired");
+    requiredbranch.innerText="required field"
+  }
+  else{
+    requiredbranch.classList.add("notrequired");
+    requiredbranch.classList.remove("requiredfield");
+    var BranchName=true;
+    }
+  if(addmision=="")
+  {
+    requiredaddmission.classList.add("requiredfield");
+    requiredaddmission.classList.remove("notrequired");
+    requiredaddmission.innerText="required field"
+  }
+  else{
+    requiredaddmission.classList.add("notrequired");
+    requiredaddmission.classList.remove("requiredfield");
+    var addmission=true;
+  }
+  if(emailListArray.length==0){
+    requiredsentto.classList.add("requiredfield");
+    requiredsentto.classList.remove("notrequired");
+    requiredsentto.innerText="please select id"
+  }
+  else{
+    requiredsentto.classList.add("notrequired");
+    requiredsentto.classList.remove("requiredfield");
+    var required=true;
+  }
+  let anyChecked = false;
+  sent.forEach(sent => {
+    if (sent.checked) {
+      anyChecked = true;
+  }
+  if (anyChecked) {
+    sendvia.classList.remove("requiredfield");
+    sendvia.classList.add("notrequired");
+    sendvia.innerText = "";
+} else {
+    sendvia.classList.remove("notrequired");
+    sendvia.classList.add("requiredfield");
+    sendvia.innerText = "Please select";
+}
+  }
+)
 
 
-//   console.log(username,collegename, branch, addmision,);
-});
+if(user&&college&&BranchName&&addmision&&required&&anyChecked){
+const top=document.getElementById('top')
+top.classList.add("top");
+top.innerHTML="Response submitted..";
+}
+else{
+  document.getElementById('top').innerHTML="";
+}
+}
+
+
+);
+//   console.log(username,collegename, branch, addmision,)
